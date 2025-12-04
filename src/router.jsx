@@ -37,5 +37,7 @@ import NotFound from "./pages/NotFound";
                 }
             ]
         }
-    ]);
+    ], {
+        basename: "/soul-alliance"
+    });
     export default router;
