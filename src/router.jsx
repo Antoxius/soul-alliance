@@ -21,10 +21,6 @@ import NotFound from "./pages/NotFound";
                     element: <Events/>
                 },
                 {
-                    path: "events/:id",
-                    element: <Events/>
-                },
-                {
                     path: "contact",
                     element: <Contact/>
                 },

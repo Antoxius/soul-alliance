@@ -23,7 +23,7 @@ export default function About() {
                 SOUL was forged in the heat of battle, born from the shared struggles and triumphs of warriors who refused to stand alone. What started as a small group of dedicated players has grown into a formidable family that spans continents and time zones.
               </p>
               <p>
-                Through countless raids, epic victories, and even devastating defeats, we have learned one fundamental truth: <span className="text-white font-bold">together, we are unstoppable</span>. Every member brings their unique strengths, and together we create something greater than the sum of our parts.
+                Through countless raids, epic victories, and even devastating defeats, we have learned one fundamental truth: <span className="text-white font-bold">together, we are strongest</span>. Every member brings their unique strengths, and together we create something greater than the sum of our parts.
               </p>
               <p>
                 We don't just play games—we build memories, forge friendships, and create a legacy that will endure long after the servers go dark. SOUL is not just our name; it's who we are at our core.
@@ -137,20 +137,12 @@ export default function About() {
             <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
               SOUL is always looking for dedicated warriors who value loyalty, teamwork, and brotherhood. If you're ready to be part of something bigger than yourself, we're ready to welcome you home.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="/"
-                className="bg-red-700 hover:bg-red-600 text-white font-bold py-4 px-8 tracking-wider transition-colors inline-block"
-              >
-                CREATE PROFILE
-              </a>
-              <a 
-                href="/contact"
-                className="bg-transparent border-2 border-red-700 hover:bg-red-700 text-white font-bold py-4 px-8 tracking-wider transition-colors inline-block"
-              >
-                CONTACT US
-              </a>
-            </div>
+            <a 
+              href="/contact"
+              className="bg-transparent border-2 border-red-700 hover:bg-red-700 text-white font-bold py-4 px-8 tracking-wider transition-colors inline-block"
+            >
+              CONTACT US
+            </a>
           </div>
         </div>
       </div>

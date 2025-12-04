@@ -5,8 +5,8 @@ export default function NotFound(){
     return(
         <>
         <h1>404 Not Found</h1>
-        <p>Siden findes ikke</p>
-        <Link to="/">Gå til forsiden</Link>
+        <p>Antoxius says this page doesn't exist</p>
+        <Link to="/">Back to home!</Link>
         </>
     )
 }
