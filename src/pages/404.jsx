@@ -1,4 +1,21 @@
-export default function NotFound() {
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+export default function NotFoundRedirect() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // GitHub Pages SPA redirect handling
+    const redirect = sessionStorage.redirect;
+    delete sessionStorage.redirect;
+    
+    if (redirect && redirect !== location.href) {
+      // Parse the redirect path
+      const path = redirect.replace(location.origin, '').replace('/soul-alliance', '');
+      navigate(path || '/', { replace: true });
+    }
+  }, [navigate]);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white flex items-center justify-center">
       <div className="text-center px-4">
