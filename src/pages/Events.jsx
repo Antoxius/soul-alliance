@@ -6,8 +6,8 @@ export default function Events() {
       time: "19:00 Server Time",
       schedule: "Days Alternate",
       icon: "🧟",
-      description: "Face off against the Bio-Mutant terror",
-      color: "from-green-900 to-green-700"
+      image: "/soul-alliance/events/frankenstein.png",
+      description: "Face off against the Bio-Mutant terror"
     },
     {
       id: 2,
@@ -15,8 +15,8 @@ export default function Events() {
       time: "19:00 Server Time",
       schedule: "Days Alternate",
       icon: "🧟‍♂️",
-      description: "Defend your base from the undead horde",
-      color: "from-red-900 to-red-700"
+      image: "/soul-alliance/events/zombie-siege.png",
+      description: "Defend your base from the undead horde"
     },
     {
       id: 3,
@@ -24,8 +24,7 @@ export default function Events() {
       time: "Check In-Game",
       schedule: "Sundays",
       icon: "💰",
-      description: "Compete for valuable resources",
-      color: "from-yellow-900 to-yellow-700"
+      description: "Compete for valuable resources"
     }
   ];
 
@@ -47,16 +46,22 @@ export default function Events() {
           {events.map((event) => (
             <div
               key={event.id}
-              className="bg-black/80 border border-gray-700 hover:border-red-700 transition-all duration-300 transform hover:scale-105"
+              className="border border-gray-700 hover:border-red-700 transition-all duration-300 transform hover:scale-105 overflow-hidden"
             >
-              <div className={`bg-gradient-to-r ${event.color} p-4 text-center`}>
-                <div className="text-5xl mb-2">{event.icon}</div>
-                <h2 className="text-xl md:text-2xl font-bold tracking-wider text-white">
-                  {event.title}
-                </h2>
+              <div 
+                className="relative p-4 text-center h-48 bg-cover bg-center bg-gray-900"
+                style={event.image ? { backgroundImage: `url(${event.image})` } : { backgroundColor: '#1a1a1a' }}
+              >
+                <div className="absolute inset-0"></div>
+                <div className="relative z-10 flex flex-col items-center justify-center h-full">
+                  <div className="text-5xl mb-2">{event.icon}</div>
+                  <h2 className="text-xl md:text-2xl font-bold tracking-wider text-white drop-shadow-lg">
+                    {event.title}
+                  </h2>
+                </div>
               </div>
               
-              <div className="p-6 space-y-4">
+              <div className="bg-black/80 p-6 space-y-4">
                 <p className="text-gray-300 text-center">{event.description}</p>
                 
                 <div className="space-y-2 pt-4 border-t border-gray-700">
