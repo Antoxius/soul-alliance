@@ -2,7 +2,7 @@ export default function UpcomingEvents({ events }) {
   return (
     <div className="bg-black/80 border border-gray-700 p-4 md:p-6 lg:p-8">
       <h3 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6 tracking-wider">
-        UPCOMING EVENTS
+        EVENT SCHEDULE
       </h3>
       <div className="space-y-3 md:space-y-4">
         {events.map((event, index) => (
