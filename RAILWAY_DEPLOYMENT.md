@@ -26,8 +26,8 @@
    
    ```
    EMAIL_SERVICE=sendgrid
-   SENDGRID_API_KEY=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
-   SENDGRID_FROM_EMAIL=Antoxiusalfa@gmail.com
+   SENDGRID_API_KEY=your_sendgrid_api_key_here
+   SENDGRID_FROM_EMAIL=your_verified_email@gmail.com
    PORT=3001
    ```
 
