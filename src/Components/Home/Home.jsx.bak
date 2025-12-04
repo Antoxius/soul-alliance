@@ -1,0 +1,236 @@
+import React, { useState } from "react";
+
+export default function Home() {
+  // Profile form state
+  const [profile, setProfile] = useState({ username: '', email: '', password: '' });
+  
+  const handleProfileChange = e => {
+    setProfile({ ...profile, [e.target.name]: e.target.value });
+  };
+  
+  const handleProfileSubmit = e => {
+    e.preventDefault();
+    console.log('Profile created:', profile);
+  };
+
+  // Sample events and chat data
+  const events = [
+    { date: '25', month: 'APR', title: 'BOSS INVASIGN', subtitle: 'BOSS INVASION' },
+    { date: '27', month: 'APR', title: 'BASE DEFENSE', subtitle: 'BASE DEFENSE' },
+    { date: '02', month: 'MAY', title: 'RESOURCE RAID', subtitle: 'RESOURCE RAID' },
+  ];
+
+  const chatMessages = [
+    { name: 'Lucas', message: 'Joining the resource raid!', avatar: '/avatars/lucas.jpg' },
+    { name: 'Sofia', message: 'We need to meet at the east camp.', avatar: '/avatars/sofia.jpg' },
+    { name: 'Jonas', message: 'Almost ready for the invasion.', avatar: '/avatars/jonas.jpg' },
+    { name: 'Fredrik', message: "Okay, let's do it.", avatar: '/avatars/fredrik.jpg' },
+  ];
+
+  return (
+    <div className="min-h-screen bg-cover bg-center relative" 
+         style={{ backgroundImage: "url('/Background-image.png')" }}>
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/60"></div>
+      
+      {/* Login button */}
+      <button className="absolute top-8 right-8 bg-[#8B3A3A] hover:bg-[#A04444] text-white px-8 py-3 font-bold tracking-wider z-10 transition-colors">
+        LOG IN
+      </button>
+
+      {/* Main content */}
+      <div className="relative z-10 px-8 pt-24 pb-12">
+        {/* Title */}
+        <div className="mb-12">
+          <h1 className="text-6xl font-bold text-[#8B3A3A] tracking-wider mb-2">ALLIANCE</h1>
+          <h2 className="text-7xl font-bold text-white tracking-wider">DARK WAR</h2>
+          <h2 className="text-7xl font-bold text-white tracking-wider">SURVIVAL</h2>
+        </div>
+
+        {/* Grid layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-7xl">
+          {/* Left column - Create Profile */}
+          <div className="bg-black/80 border border-gray-700 p-8">
+            <h3 className="text-2xl font-bold text-white mb-6 tracking-wider">CREATE PROFILE</h3>
+            <form onSubmit={handleProfileSubmit} className="space-y-4">
+              <div>
+                <label className="block text-gray-300 mb-2 text-sm">Username</label>
+                <input
+                  type="text"
+                  name="username"
+                  value={profile.username}
+                  onChange={handleProfileChange}
+                  className="w-full bg-transparent border border-gray-600 text-white px-4 py-3 focus:outline-none focus:border-gray-500"
+                />
+              </div>
+              <div>
+                <label className="block text-gray-300 mb-2 text-sm">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={profile.email}
+                  onChange={handleProfileChange}
+                  className="w-full bg-transparent border border-gray-600 text-white px-4 py-3 focus:outline-none focus:border-gray-500"
+                />
+              </div>
+              <div>
+                <label className="block text-gray-300 mb-2 text-sm">Password</label>
+                <input
+                  type="password"
+                  name="password"
+                  value={profile.password}
+                  onChange={handleProfileChange}
+                  className="w-full bg-transparent border border-gray-600 text-white px-4 py-3 focus:outline-none focus:border-gray-500"
+                />
+              </div>
+              <button 
+                type="submit"
+                className="w-full bg-[#8B3A3A] hover:bg-[#A04444] text-white font-bold py-3 tracking-wider transition-colors"
+              >
+                CREATE
+              </button>
+            </form>
+          </div>
+
+          {/* Right column - Upcoming Events */}
+          <div className="bg-black/80 border border-gray-700 p-8">
+            <h3 className="text-2xl font-bold text-white mb-6 tracking-wider">UPCOMING EVENTS</h3>
+            <div className="space-y-4">
+              {events.map((event, index) => (
+                <div key={index} className="flex items-start gap-4 pb-4 border-b border-gray-700 last:border-0">
+                  <div className="text-center min-w-[60px]">
+                    <div className="text-4xl font-bold text-white">{event.date}</div>
+                    <div className="text-sm text-gray-400">{event.month}</div>
+                  </div>
+                  <div>
+                    <div className="text-xl font-bold text-white tracking-wide">{event.title}</div>
+                    <div className="text-gray-400">{event.subtitle}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Chat section - full width below */}
+          <div className="bg-black/80 border border-gray-700 p-8 lg:col-span-2">
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-2xl font-bold text-white tracking-wider">CHAT</h3>
+              <button className="text-gray-500 hover:text-gray-300">⋯</button>
+            </div>
+            <div className="space-y-3">
+              {chatMessages.map((msg, index) => (
+                <div key={index} className="flex items-start gap-4 p-3 hover:bg-white/5 transition-colors">
+                  <div className="w-12 h-12 rounded-full bg-gray-700 flex-shrink-0 overflow-hidden">
+                    {/* Placeholder for avatar - you can add actual images */}
+                    <div className="w-full h-full bg-gradient-to-br from-gray-600 to-gray-800"></div>
+                  </div>
+                  <div className="flex-1">
+                    <div className="font-bold text-white mb-1">{msg.name}</div>
+                    <div className="text-gray-400 text-sm">{msg.message}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+              value={profile.username}
+              onChange={handleProfileChange}
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              className="p-2 rounded"
+              value={profile.email}
+              onChange={handleProfileChange}
+              required
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              className="p-2 rounded"
+              value={profile.password}
+              onChange={handleProfileChange}
+              required
+              minLength={6}
+            />
+            {profileError && <span className="text-red-500 text-xs">{profileError}</span>}
+            <button type="submit" className="p-2 rounded font-bold">CREATE</button>
+          </form>
+        </div>
+        {/* Upcoming Events */}
+        <div className="bg-black bg-opacity-70 p-6 rounded w-full md:w-1/2 event-list">
+          <h2 className="text-2xl font-bold text-white mb-4">UPCOMING EVENTS</h2>
+          <div className="event mb-2">
+            <div className="flex items-center gap-4">
+              <span className="text-2xl font-bold text-white">25</span>
+              <div>
+                <span className="text-lg font-bold text-white">APR</span><br />
+                <span className="text-lg font-bold text-white">BOSS INVASION</span>
+                <div className="text-gray-400 text-xs">BOSS INVASION</div>
+              </div>
+            </div>
+          </div>
+          <div className="event mb-2">
+            <div className="flex items-center gap-4">
+              <span className="text-2xl font-bold text-white">27</span>
+              <div>
+                <span className="text-lg font-bold text-white">APR</span><br />
+                <span className="text-lg font-bold text-white">BASE DEFENSE</span>
+                <div className="text-gray-400 text-xs">BASE DEFENSE</div>
+              </div>
+            </div>
+          </div>
+          <div className="event">
+            <div className="flex items-center gap-4">
+              <span className="text-2xl font-bold text-white">02</span>
+              <div>
+                <span className="text-lg font-bold text-white">MAY</span><br />
+                <span className="text-lg font-bold text-white">RESOURCE RAID</span>
+                <div className="text-gray-400 text-xs">RESOURCE RAID</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Chat Section */}
+      <section className="bg-black bg-opacity-70 p-6 rounded mt-8 w-full max-w-4xl chat-list z-10">
+        <h2 className="text-2xl font-bold text-white mb-4">CHAT</h2>
+        <div className="chat-message flex items-center gap-4 mb-2">
+          <div className="w-10 h-10 rounded-full bg-gray-700"></div>
+          <div>
+            <span className="font-bold text-white">Lucas</span>
+            <div className="text-gray-300">Joining the resource raid!</div>
+          </div>
+        </div>
+        <div className="chat-message flex items-center gap-4 mb-2">
+          <div className="w-10 h-10 rounded-full bg-gray-700"></div>
+          <div>
+            <span className="font-bold text-white">Sofia</span>
+            <div className="text-gray-300">We need to meet at the east camp.</div>
+          </div>
+        </div>
+        <div className="chat-message flex items-center gap-4 mb-2">
+          <div className="w-10 h-10 rounded-full bg-gray-700"></div>
+          <div>
+            <span className="font-bold text-white">Jonas</span>
+            <div className="text-gray-300">Almost ready for the invasion.</div>
+          </div>
+        </div>
+        <div className="chat-message flex items-center gap-4">
+          <div className="w-10 h-10 rounded-full bg-gray-700"></div>
+          <div>
+            <span className="font-bold text-white">Fredrik</span>
+            <div className="text-gray-300">Okay, let’s do it.</div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
