@@ -26,7 +26,7 @@ export default function Navigation(){
                 }
             >
                 <div className='w-32 flex items-center justify-center gap-2'>
-                <img src="public\Icon.png" alt="Logo" />
+                <img src="/Icon.png" alt="Logo" />
                 </div>
             </NavLink>
 
@@ -54,18 +54,22 @@ export default function Navigation(){
                 <NavLink to="/" className={navLinkClass} onClick={closeMenu} end>
                     Home
                 </NavLink>
-                <NavLink to="/list" className={navLinkClass} onClick={closeMenu}>
+                <NavLink to="/events" className={navLinkClass} onClick={closeMenu}>
                     Events
+                </NavLink>
+                <NavLink to="/about" className={navLinkClass} onClick={closeMenu}>
+                    About
                 </NavLink>
                 <NavLink to="/contact" className={navLinkClass} onClick={closeMenu}>
                     Contact
                 </NavLink>
-                <button 
-                    className="bg-[#8B3A3A] hover:bg-[#A04444] text-white px-8 md:px-6 py-3 md:py-2 text-xl md:text-base font-bold tracking-wider transition-colors"
+                <NavLink 
+                    to="/"
+                    className="bg-[#8B3A3A] hover:bg-[#A04444] text-white px-8 md:px-6 py-3 md:py-2 text-xl md:text-base font-bold tracking-wider transition-colors block"
                     onClick={closeMenu}
                 >
                     LOG IN
-                </button>
+                </NavLink>
             </div>
         </nav>
     )
