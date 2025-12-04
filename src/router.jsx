@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router";
 import Layout from "./Layout";
 import Home from "./Components/Home/Home";
-import List from "./pages/Members";
-import Detail from "./pages/Events";
+import Members from "./pages/Members";
+import Events from "./pages/Events";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
@@ -18,11 +18,11 @@ import NotFound from "./pages/NotFound";
                 },
                 {
                     path: "events",
-                    element: <Detail/>
+                    element: <Events/>
                 },
                 {
                     path: "events/:id",
-                    element: <Detail/>
+                    element: <Events/>
                 },
                 {
                     path: "contact",
