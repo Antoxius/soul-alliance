@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-cover bg-center relative" 
-         style={{ backgroundImage: "url('/Background-image.png')" }}>
+         style={{ backgroundImage: "url('/soul-alliance/Background-image.png')" }}>
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/60"></div>
 
