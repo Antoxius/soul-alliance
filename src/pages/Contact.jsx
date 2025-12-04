@@ -176,7 +176,7 @@ export default function Contact() {
           <div className="space-y-6">
             <div>
               <h3 className="font-bold text-lg mb-2 text-red-700">How do I join the clan?</h3>
-              <p className="text-gray-400">Create a profile on our homepage and you'll automatically be registered. Check your email for verification!</p>
+              <p className="text-gray-400">Join our Discord server to connect with the community and participate in clan activities!</p>
             </div>
 
             <div>

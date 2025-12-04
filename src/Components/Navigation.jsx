@@ -25,9 +25,7 @@ export default function Navigation(){
                         : "text-lg md:text-2xl font-extrabold text-white tracking-wide hover:text-red-700 transition-colors z-50"
                 }
             >
-                <div className='w-32 flex items-center justify-center gap-2'>
-                <img src="public\Icon.png" alt="Logo" />
-                </div>
+                <img src="/soul-alliance/Icon.png" alt="SOUL Alliance Logo" className="h-12 w-auto" />
             </NavLink>
 
             {/* Burger Menu Button */}

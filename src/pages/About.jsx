@@ -141,7 +141,7 @@ export default function About() {
               href="/contact"
               className="bg-transparent border-2 border-red-700 hover:bg-red-700 text-white font-bold py-4 px-8 tracking-wider transition-colors inline-block"
             >
-              CONTACT US
+              CONTACT ME DIRECTLY
             </a>
           </div>
         </div>
