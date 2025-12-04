@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useState } from 'react';
+import { API_URL } from '../../config';
 
 const forgotPasswordSchema = z.object({
   email: z.string()
@@ -39,7 +40,7 @@ export default function ForgotPassword({ onClose }) {
         localStorage.setItem('passwordReset_' + resetToken, JSON.stringify(resetData));
         
         // Send email via backend API
-        const response = await fetch('http://localhost:3001/api/forgot-password', {
+        const response = await fetch(`${API_URL}/api/forgot-password`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

@@ -6,6 +6,7 @@ import CreateProfileForm from './CreateProfileForm';
 import SignInForm from './SignInForm';
 import UpcomingEvents from './UpcomingEvents';
 import ChatSection from './ChatSection';
+import { API_URL } from '../../config';
 
 export default function Home() {
   const [showLogin, setShowLogin] = useState(false);
@@ -53,7 +54,7 @@ export default function Home() {
     
     // Send user data to backend to log email
     try {
-      await fetch('http://localhost:3001/api/register-user', {
+      await fetch(`${API_URL}/api/register-user`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
