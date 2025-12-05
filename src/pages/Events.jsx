@@ -46,12 +46,10 @@ export default function Events() {
           {events.map((event) => (
             <div
               key={event.id}
-              className="border border-gray-700 hover:border-red-700 transition-all duration-300 transform hover:scale-105 overflow-hidden"
+              className="border border-gray-700 hover:border-red-700 transition-all duration-300 transform hover:scale-105 overflow-hidden bg-cover bg-center bg-gray-900"
+              style={event.image ? { backgroundImage: `url(${event.image})` } : { backgroundColor: '#1a1a1a' }}
             >
-              <div 
-                className="relative p-4 text-center h-48 bg-cover bg-center bg-gray-900"
-                style={event.image ? { backgroundImage: `url(${event.image})` } : { backgroundColor: '#1a1a1a' }}
-              >
+              <div className="relative p-4 text-center h-48">
                 <div className="absolute inset-0"></div>
                 <div className="relative z-10 flex flex-col items-center justify-center h-full">
                   <div className="text-5xl mb-2">{event.icon}</div>

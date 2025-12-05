@@ -23,7 +23,7 @@ export default function NotFoundRedirect() {
           404
         </h1>
         <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-wider">
-          PAGE NOT FOUND
+          Ant was too lazy to make this
         </h2>
         <p className="text-gray-400 text-lg md:text-xl mb-8 max-w-md mx-auto">
           The page you're looking for has been lost to the wasteland.

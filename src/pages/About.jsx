@@ -138,7 +138,7 @@ export default function About() {
               SOUL is always looking for dedicated warriors who value loyalty, teamwork, and brotherhood. If you're ready to be part of something bigger than yourself, we're ready to welcome you home.
             </p>
             <a 
-              href="/contact"
+              href="src\pages\404.jsx"
               className="bg-transparent border-2 border-red-700 hover:bg-red-700 text-white font-bold py-4 px-8 tracking-wider transition-colors inline-block"
             >
               CONTACT ME DIRECTLY

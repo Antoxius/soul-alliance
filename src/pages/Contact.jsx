@@ -180,11 +180,6 @@ export default function Contact() {
             </div>
 
             <div>
-              <h3 className="font-bold text-lg mb-2 text-red-700">What games do you play?</h3>
-              <p className="text-gray-400">We primarily focus on survival and battle royale games. Check our Events page for upcoming game sessions!</p>
-            </div>
-
-            <div>
               <h3 className="font-bold text-lg mb-2 text-red-700">Do I need to be highly skilled?</h3>
               <p className="text-gray-400">Not at all! We welcome players of all skill levels. Our community is about having fun and improving together.</p>
             </div>

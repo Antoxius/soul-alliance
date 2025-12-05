@@ -9,7 +9,7 @@ export default function NotFound() {
           PAGE NOT FOUND
         </h2>
         <p className="text-gray-400 text-lg md:text-xl mb-8 max-w-md mx-auto">
-          The page you're looking for has been lost to the wasteland.
+          The page you're looking for has been lost to the wasteland. (Antoxius was too lazy to make this)
         </p>
         <a
           href="/soul-alliance/"
