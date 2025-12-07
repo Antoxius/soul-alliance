@@ -6,6 +6,8 @@ import Events from "./pages/Events";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
 
 // Component to handle GitHub Pages redirects
 function RedirectHandler() {
@@ -44,6 +46,14 @@ const router = createBrowserRouter([
                 {
                     path: "about",
                     element: <About/>
+                },
+                {
+                    path: "login",
+                    element: <Login/>
+                },
+                {
+                    path: "dashboard",
+                    element: <Dashboard/>
                 },
                 {
                     path: "*",

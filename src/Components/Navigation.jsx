@@ -1,9 +1,11 @@
 import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
+import { useAuth } from '../context/AuthContext'
 import './navigation.scss';
 
 export default function Navigation(){
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { user, isAuthenticated } = useAuth();
     
     const navLinkClass = ({ isActive }) => 
         isActive 
@@ -61,6 +63,15 @@ export default function Navigation(){
                 <NavLink to="/contact" className={navLinkClass} onClick={closeMenu}>
                     Contact
                 </NavLink>
+                {isAuthenticated ? (
+                    <NavLink to="/dashboard" className={navLinkClass} onClick={closeMenu}>
+                        Dashboard
+                    </NavLink>
+                ) : (
+                    <NavLink to="/login" className={navLinkClass} onClick={closeMenu}>
+                        Login
+                    </NavLink>
+                )}
             </div>
         </nav>
     )
